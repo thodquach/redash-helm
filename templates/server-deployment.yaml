@@ -88,7 +88,7 @@ spec:
           command:
             - /bin/sh
             - -c
-            - /app/bin/docker-entrypoint server; tail -f /dev/null
+            - /app/bin/docker-entrypoint create_db; /app/bin/docker-entrypoint server; tail -f /dev/null
           ports:
             - name: http
               containerPort: 5000

@@ -63,7 +63,7 @@ redash postgres
 {{- else -}}
 {{- $hostnamedefault := printf "%s-postgresql" .Chart.Name | trunc 63 | trimSuffix "-" -}}
 {{- $host := $hostnamedefault | trunc 63 | trimSuffix "-" -}}
-{{- printf "postgresql://%s:%s@%s:5432/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword $host .Values.postgresql.postgresqlDatabase | quote -}}
+{{- printf "postgresql://%s:%s@redash-%s:5432/%s" .Values.postgresql.postgresqlUsername .Values.postgresql.postgresqlPassword $host .Values.postgresql.postgresqlDatabase | quote -}}
 {{- end -}}
 {{- end -}}
 {{- end -}}
